@@ -1,0 +1,138 @@
+/* -----------------------------------------------------------------------
+폰트 설정
+----------------------------------------------------------------------- */
+
+/* @font-face -> 웹폰트 사용을 위한 지시어(directive) */
+/* html 파일과 같은 폴더에 들어있는 폰트 파일을 사용하는 경우 */
+@font-face {
+    font-family: "Pretendard";
+    src: url("fonts/PretendardVariable.ttf") format("truetype");
+}
+/* 웹 상의 폰트 파일을 사용하는 경우 */
+@font-face {
+    font-family: 'Paperlogy-9Black';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');
+}
+
+
+
+/* -----------------------------------------------------------------------
+초기화 및 기본값 설정
+----------------------------------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* 박스 크기(width, height)를 내부 여백, 경계선이 포함되는 크기를 기준으로 설정. 기본값은 content-box */
+}
+a, a:link, a:hover, a:visited { /* a 태그로 만들어진 링크 텍스트 설정 */
+    text-decoration: none;
+    color: #000;
+}
+body { /* body 태그 내부 텍스트에 대한 기본 폰트 설정 */
+    font-family: "Pretendard", sans-serif;
+}
+
+
+
+/* -----------------------------------------------------------------------
+header 영역 - 로고, 메인메뉴
+----------------------------------------------------------------------- */
+
+header {
+    position: fixed; /* header 영역 고정 */
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* header 영역의 아이템을 세로 방향으로 가운데 정렬 */
+    width: 100%;
+    height: 100px;
+    padding: 0 30px;
+    background-color: rgb(240, 255, 255);
+    z-index: 10000;
+}
+
+#logo {
+    font-family: "Paperlogy-9Black", sans-serif;
+    font-size: 36px;
+}
+#logo a:hover {
+    color: rgb(48, 196, 229);
+    transition: 0.3s;
+}
+
+.navmenu {
+    display: flex;
+    gap: 20px; /* flex 아이템 사이의 간격 */
+}
+/* #navmenu 요소에 포함된 a 태그 스타일 설정 */
+.navmenu a {
+    color: #000;
+}
+.navmenu a:link {
+    text-decoration: none;
+}
+.navmenu a:hover {
+    color: rgb(48, 196, 229);
+    font-weight: 700;
+}
+
+
+
+/* -----------------------------------------------------------------------
+본문 영역
+----------------------------------------------------------------------- */
+
+main {
+    position: relative;
+    width: 90%;
+    max-width: 1280px; /* 가로폭의 최대값 */
+    margin: 0 auto; /* main 영역을 가운데 정렬 */
+    padding-top: 200px; /* header의 높이에 따라 조절 */
+    margin-bottom: 60px;
+}
+.title {
+    font-size: 24px;
+    font-weight: 700;
+}
+.desc {
+    padding-top: 20px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 160%;
+}
+.option {
+    padding-top: 8px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #777;
+}
+.pictures {
+    display: flex;
+    justify-content: flex-start; /* flex 아이템의 메인축(기본값에서는 가로) 정렬 방식 */
+    flex-wrap: wrap; /* 아이템이 개수가 많을 때 줄바꿈이 가능하도록 함. 기본값은 nowrap */
+    padding-top: 50px;
+}
+.picture-item {
+    width: 100%;
+    padding-right: 8px;
+    padding-bottom: 8px;
+}
+.picture-item > img {
+    display: block; /* img가 inline 요소일 때 생기는 틈 제거 */
+    width: 100%;
+}
+
+
+
+/* -----------------------------------------------------------------------
+footer 영역 - 저작권 정보
+----------------------------------------------------------------------- */
+
+footer {
+    padding-bottom: 20px;
+    padding-top: 60px;
+    text-align: center;
+    font-size: 16px;
+}
